@@ -14,7 +14,7 @@ render_todo_list();
 function render_todo_list() {
   let todo_list_html = '';
 
-  todo_list.forEach(function(todo_object, index) {
+  todo_list.forEach((todo_object, index) => {
     const { name, due_date } = todo_object;
 
     const html = `
