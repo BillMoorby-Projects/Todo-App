@@ -34,8 +34,6 @@ function render_todo_list() {
     todo_list_html += html;
   }
 
-  console.log(todo_list_html);
-
 
   document.querySelector('.js_todo_list')
     .innerHTML = todo_list_html;
@@ -55,7 +53,6 @@ function add_todo() {
     }
   );
 
-  console.log(todo_list);
 
   input_element.value = '';
 
