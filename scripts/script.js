@@ -22,10 +22,7 @@ function render_todo_list() {
 
       <div>${due_date}</div>
 
-      <button onclick="
-        todo_list.splice(${index}, 1);
-        render_todo_list();
-      " class="delete_todo_button">
+      <button class="delete_todo_button js_delete_todo_button">
         Delete
       </button>
     `;
@@ -34,8 +31,23 @@ function render_todo_list() {
 
   document.querySelector('.js_todo_list')
   .innerHTML = todo_list_html;
+
+  
+  document.querySelectorAll('.js_delete_todo_button')
+    .forEach((delete_button, index) => {
+      delete_button.addEventListener('click', () => {
+        todo_list.splice(index, 1);
+        render_todo_list();
+      });
+    });
   
   };
+
+  document.querySelector('.js_add_todo_button')
+    .addEventListener('click', () => {
+      add_todo();
+    });
+
 
 function add_todo() {
   const input_element = document.querySelector('.js_name_input');
@@ -49,8 +61,6 @@ function add_todo() {
       due_date
     }
   );
-
-  console.log(todo_list);
 
   input_element.value = '';
 
