@@ -11,6 +11,11 @@ body {
   align-items: center;
 }
 
+.todo_input_grid {
+  margin-bottom: 10px;
+  align-items: stretch;
+}
+
 .name_input, 
 .due_date_input {
   font-size: 15px;
